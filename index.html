@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="assets/img/buddyapp-favicon.ico" type="image/x-icon">
   <title>BuddyApp</title>
 
   <link rel="stylesheet" href="assets/css/reset.css">
@@ -12,204 +13,162 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Raleway&display=swap" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.css" />
-
+  <link rel="stylesheet" href="assets/css/styles.css">
   <!-- Material Design Theming -->
-    <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-    <link rel="stylesheet" href="main.css"> -->
-  
-  </head>
-  <body>
+  <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+  <link rel="stylesheet" href="main.css"> -->
 
-    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  
-      <!-- Header section containing title -->
-      <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
-        <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
-          <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
-            <a href="/"><h3>Firebase Authentication</h3></a>
-          </div>
-        </div>
-      </header>
-  
-      <main class="mdl-layout__content mdl-color--grey-100">
-        <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
-  
-          <!-- Container for the demo -->
-          <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
-            <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
-              <h2 class="mdl-card__title-text">Facebook Authentication with OAuth Credentials</h2>
+</head>
+
+<body> 
+
+  <canvas id="canvas"></canvas>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="navbar navbar-expand-lg static-top">
+    <div id="navbar-wrap">
+      <img src="assets/img/buddyApp-icon-gr-lg.png" height="50" id="buddyApp-icon-logo">
+      <nav class="navbar navbar-light">
+        <form class="form-inline nav-search" name="site-search" role="search">
+          <div class="input-group">
+            <!-- <div class="input-group-prepend nav-left">
+              <span class="input-group-text" id="basic-addon1">>></span>
+              <div id="nav-search-drop-card"></div>
+            </div> -->
+            <input type="text" class="form-control" id="nav-search-field" type="search" placeholder="Search"
+              aria-label="Search">
+            <div class="input-group-append nav-right">
+              <button class="btn-light" id="nav-search-btn" type="submit">Search</button>
             </div>
-            <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-              <p>Log in with your Facebook account below.</p>
+          </div>
+        </form>
+      </nav>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://cfpaige.github.io/BuddyApp/events.html">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://cfpaige.github.io/BuddyApp/create.html">Create</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://cfpaige.github.io/BuddyApp/about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
   
+  <!-- ==================== MAIN ==================== -->
+  <main>
+    <section id="official-events">
+      <h1>Official Events</h1>
+      <div class="display-wrapper">
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-body">
+              <p>Log in with your Facebook account below.</p>
+            
               <!-- [START facebook_button] -->
               <fb:login-button data-auto-logout-link="true" scope="public_profile,email" size="large"></fb:login-button>
-              <!-- [END facebook_button] -->
-  
-              <div class="quickstart-user-details-container">
-                Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-                <div>Firebase auth <code>currentUser</code> object value:</div>
-                <pre><code id="quickstart-account-details">null</code></pre>
-              </div>
+              <!-- [END facebook_button] -->            
+          </div>
+        </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text" id="card-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a
+                libero vel
+                sapien
+                rutrum volutpat id
+                nec
+                libero. Suspendisse elit purus, ultrices et volutpat nec, lobortis vel nisl. Vestibulum lectus nulla,
+                dignissim
+                imperdiet pretium in, ornare ac ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                per
+                inceptos himenaeos. Quisque pharetra odio metus, sit amet efficitur nibh feugiat eu. Pellentesque tempor
+                sem
+                eu
+                odio malesuada, nec posuere nisl convallis. Suspendisse et ornare elit, vel suscipit felis. Nunc sed
+                ornare
+                metus.
+                Quisque vehicula, lectus et vestibulum venenatis, libero nisl aliquet orci, at rutrum urna ligula at
+                mauris.
+                Aliquam sed nibh eget dolor faucibus tempus.</p>
+            </div>
+            <div class="card-footer text-right">
+              <a class="btn btn-light" href="#" role="button" id="event-button">Browse Events</a>
             </div>
           </div>
-  
         </div>
-      </main>
-    </div>
-  
-    <!-- Import and configure the Firebase SDK -->
-    <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
-    <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
-    <script src="/__/firebase/6.2.0/firebase-app.js"></script>
-    <script src="/__/firebase/6.2.0/firebase-auth.js"></script>
-    <script src="/__/firebase/init.js"></script>
-  
-    <script type="text/javascript">
-      /**
-       * Function called when there is a change in Facebook auth state.
-       */
-      // [START facebookcallback]
-      function checkLoginState(event) {
-        if (event.authResponse) {
-          // User is signed-in Facebook.
-          var unsubscribe = firebase.auth().onAuthStateChanged(function(firebaseUser) {
-            unsubscribe();
-            // Check if we are already signed-in Firebase with the correct user.
-            if (!isUserEqual(event.authResponse, firebaseUser)) {
-              // Build Firebase credential with the Facebook auth token.
-              // [START facebookcredential]
-              var credential = firebase.auth.FacebookAuthProvider.credential(
-                  event.authResponse.accessToken);
-              // [END facebookcredential]
-              // Sign in with the credential from the Facebook user.
-              // [START authwithcred]
-              firebase.auth().signInWithCredential(credential).catch(function(error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // The email of the user's account used.
-                var email = error.email;
-                // The firebase.auth.AuthCredential type that was used.
-                var credential = error.credential;
-                // [START_EXCLUDE]
-                if (errorCode === 'auth/account-exists-with-different-credential') {
-                  alert('You have already signed up with a different auth provider for that email.');
-                  // If you are using multiple auth providers on your app you should handle linking
-                  // the user's accounts here.
-                } else {
-                  console.error(error);
-                }
-                // [END_EXCLUDE]
-              });
-              // [END authwithcred]
-            } else {
-              // User is already signed-in Firebase with the correct user.
-            }
-          });
-        } else {
-          // User is signed-out of Facebook.
-          // [START signout]
-          firebase.auth().signOut();
-          // [END signout]
-        }
-      }
-      // [END facebookcallback]
-      /**
-       * Check that the given Facebook user is equals to the  given Firebase user
-       */
-      // [START checksameuser]
-      function isUserEqual(facebookAuthResponse, firebaseUser) {
-        if (firebaseUser) {
-          var providerData = firebaseUser.providerData;
-          for (var i = 0; i < providerData.length; i++) {
-            if (providerData[i].providerId === firebase.auth.FacebookAuthProvider.PROVIDER_ID &&
-                providerData[i].uid === facebookAuthResponse.userID) {
-              // We don't need to re-auth the Firebase connection.
-              return true;
-            }
-          }
-        }
-        return false;
-      }
-      // [END checksameuser]
-      /**
-       * initApp handles setting up UI event listeners and registering Firebase auth listeners:
-       *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
-       *    out, and that is where we update the UI.
-       */
-      function initApp() {
-        // Listening for auth state changes.
-        // [START authstatelistener]
-        firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
-            // User is signed in.
-            var displayName = user.displayName;
-            var email = user.email;
-            var emailVerified = user.emailVerified;
-            var photoURL = user.photoURL;
-            var isAnonymous = user.isAnonymous;
-            var uid = user.uid;
-            var providerData = user.providerData;
-            // [START_EXCLUDE]
-            document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-            document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
-            // [END_EXCLUDE]
-          } else {
-            // User is signed out.
-            // [START_EXCLUDE]
-            document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-            document.getElementById('quickstart-account-details').textContent = 'null';
-            // [END_EXCLUDE]
-          }
-        });
-        // [END authstatelistener]
-      }
-      initApp();
-    </script>
-  
-    <!-- Facebook -->
-    <!-- [START facebookconfig] -->
-    <script src="//connect.facebook.net/en_US/sdk.js"></script>
-    <script>
-      FB.init({
-        /**********************************************************************
-         * TODO(Developer): Change the value below with your Facebook app ID. *
-         **********************************************************************/
-        appId      : '314010786217012',
-        status     : true,
-        xfbml      : true,
-        version    : 'v3.3'
-      });
-      // [START_EXCLUDE silent]
-      // Observe the change in Facebook login status
-      // [START facebookauthlistener]
-      FB.Event.subscribe('auth.authResponseChange', checkLoginState);
-      // [END facebookauthlistener]
-      // [END_EXCLUDE]
-    </script>
-    <!-- [END facebookconfig] -->
-  
-  </body>
-  </html>
+      </div>
+    </section>
+    <section id="add-event">
+      <h1>User Events</h1>
+      <div class="display-wrapper">
+        <div class="card-deck">
+          <div class="card">
+            <div class="img-wrapper">
+              <img src="https://via.placeholder.com/500.jpg" id="add-img">
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text" id="card-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a
+                libero vel
+                sapien
+                rutrum volutpat id
+                nec
+                libero. Suspendisse elit purus, ultrices et volutpat nec, lobortis vel nisl. Vestibulum lectus nulla,
+                dignissim
+                imperdiet pretium in, ornare ac ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                per
+                inceptos himenaeos. Quisque pharetra odio metus, sit amet efficitur nibh feugiat eu. Pellentesque tempor
+                sem
+                eu
+                odio malesuada, nec posuere nisl convallis. Suspendisse et ornare elit, vel suscipit felis. Nunc sed
+                ornare
+                metus.
+                Quisque vehicula, lectus et vestibulum venenatis, libero nisl aliquet orci, at rutrum urna ligula at
+                mauris.
+                Aliquam sed nibh eget dolor faucibus tempus.</p>
+            </div>
+            <div class="card-footer text-right">
+              <a class="btn btn-light" href="#" role="button" id="event-button">Create Event</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    Choose Kind
+    <img src="assets/img/buddyApp-logo-green.PNG" height="60px" id="footer-logo">
+  </footer>  
 
 <!-- ==================== SCRIPTS ==================== -->
-<!-- 
-<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
 
+<!-- <script src="/__/firebase/6.2.0/firebase-app.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+<script src="/__/firebase/6.2.0/firebase-auth.js"></script>
+<script src="/__/firebase/init.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+<script src="//connect.facebook.net/en_US/sdk.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
   integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
-
-<!-- <script src="logic.js"></script> -->
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="logic.js"></script>
 
 </body>
-
 </html>
