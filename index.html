@@ -78,18 +78,11 @@
             <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
               <h2 class="mdl-card__title-text">Facebook Authentication with OAuth Credentials</h2>
             </div>
-            <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-              <p>Log in with your Facebook account below.</p>
-  
+            <div id="fb-root">
+              <p>Log in with your Facebook account below.</p>  
               <!-- [START facebook_button] -->
-              <fb:login-button data-auto-logout-link="true" scope="public_profile,email" size="large"></fb:login-button>
+              <div class="fb-login-button" data-width="300" data-size="large" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
               <!-- [END facebook_button] -->
-  
-              <div class="quickstart-user-details-container">
-                Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-                <div>Firebase auth <code>currentUser</code> object value:</div>
-                <pre><code id="quickstart-account-details">null</code></pre>
-              </div>
             </div>
           </div>
          <div class="card">
@@ -184,6 +177,7 @@
     <script src="/__/firebase/6.2.0/firebase-auth.js"></script>
     <script src="/__/firebase/init.js"></script>
     <script src="//connect.facebook.net/en_US/sdk.js"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=314010786217012&autoLogAppEvents=1"></script>
     <script src="cp-dot-logic.js"></script>  
     <script src="logic.js"></script>
 
