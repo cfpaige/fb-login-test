@@ -1,25 +1,3 @@
-
-$("#event-button").on("click", function (event) {
-  event.preventDefault();
-
-  var user_id = '+response.id+';
-  var user_name = '+response.first_name+ ' + '+response.last_name+'
-  var user_email = '+response.email+'
-  var user_pic = '+response.picture.data.url+'
-
-  var newUser = {
-    id: user_id,
-    name: user_name,
-    email: user_email,
-    picture: user_pic
-  };
-
-  database.ref().push(newUser);
-
-  // clear input?
-
-});
-
 // =================  BACKGROUND CANVAS LOGIC ================
 // from https://codepen.io/LeonGr/pen/yginI#code-area
 
