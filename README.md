@@ -1,2 +1,3 @@
-# fb_login_test
-testing user login options using facebook and firebase
+## FB Login Logic Test ##
+
+Testing user login options for BuddyApp using Facebook and Firebase SDKs.
