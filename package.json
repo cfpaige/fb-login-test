@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/cfpaige/fb_login_test#readme",
   "dependencies": {
-    "dotenv": "^8.0.0",
     "firebase": "^6.2.0"
   }
 }
